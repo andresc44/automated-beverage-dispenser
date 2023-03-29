@@ -1,6 +1,7 @@
 #ifndef KEYPAD_H
 #define KEYPAD_H
 
-//Add initialization of functions
+void keypadSetup(); // Setup of keypad
+int keySelected();  //return the key selected, but as integer. See Pinout.h for translation
 
 #endif
