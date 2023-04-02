@@ -19,7 +19,6 @@ void setup() {
   Serial.begin(9600);
   lcdSetup();
   pumpsSetup();
-  keypadSetup();
   lightsSetup();
   lcd.clear();
 }
@@ -28,7 +27,7 @@ void loop() {
   ledFinished(false);
   lcdPrint("Hello, Please make a selection");
   uint8_t choice_made = 255;    //does int cover everything? Input protection in keySelected stage
-  while (choice_made != 255){
+  while (choice_made == 255){
     choice_made = keySelected();//Add protection from timeout, return the key pressed
   }
   delay(400);
