@@ -21,9 +21,7 @@ void setup() {
   pumpsSetup();
   keypadSetup();
   lightsSetup();
-  lcdClear();
-  
-
+  lcd.clear();
 }
 
 void loop() {
@@ -34,7 +32,7 @@ void loop() {
     choice_made = keySelected();//Add protection from timeout, return the key pressed
   }
   delay(400);
-  lcdClear();
+  lcd.clear();
   lcdChoice(choice_made); //Print out the choice made
   delay(1500);
 
@@ -44,7 +42,7 @@ void loop() {
   for (uint8_t pump = 0; pump < 4; pump++) {
     int on_time = pumps_time[pump];
     if (on_time) {
-      lcdClear();
+      lcd.clear();
       ledPumpOn(pump);
       lcdPouring(pump);
       pumpOn(pump, on_time);
@@ -52,11 +50,11 @@ void loop() {
     }
   }
   
-  lcdClear();
+  lcd.clear();
   lcdPrint("Your drink is now ready, please enjoy!");
   ledFinished(true);
   delay(5000);
-  lcdClear();
+  lcd.clear();
 }
 
 // Emergency stop push button interrupt, to be discussed
