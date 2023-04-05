@@ -20,5 +20,6 @@ int keySelected(){
   char customKey = customKeypad.getKey();
   if (customKey >= '1' && customKey <= '4'){
     return customKey - '0'; //return integer representation of the character
-  }
+  } else{
+    return 0;
 }
