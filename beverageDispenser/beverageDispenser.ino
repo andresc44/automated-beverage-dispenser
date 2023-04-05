@@ -27,7 +27,7 @@ void loop() {
   ledFinished(false);
   lcdPrint("Hello, Please make a selection");
   uint8_t choice_made = 255;    //does int cover everything? Input protection in keySelected stage
-  while (choice_made == 255){
+  while (choice_made == 255){ //need to put a statement that woud assing choice made only if keyselected result isn't zero
     choice_made = keySelected();//Add protection from timeout, return the key pressed
   }
   delay(400);
