@@ -18,6 +18,22 @@
 // initialize the library with the numbers of the interface pins
 LiquidCrystal lcd(7, 8, 9, 10, 11, 12);
 
+String drink_names[13] = {
+  "Coke",
+  "Lime Juice",
+  "Rum Shot",
+  "Vodka Shot",
+  "Coke and Lime",
+  "Rum and Coke",
+  "Coke and Vodka",
+  "Rum and Lime",
+  "Vodka and Lime",
+  "Rum and Vodka",
+  "Rum, Coke, Lime",
+  "Vodka, Coke, Lime",
+  "EVERYTHING"  
+};
+
 void lcdsetup(){
   // set up the LCD's number of columns and rows:);
   lcd.begin(16, 2);
@@ -48,17 +64,7 @@ void lcdPrint(String message){
 
 void lcdChoice(uint8_t choice){
   String message;
-  if (choice == 1){
-    message = "Drink 1";
-  } else if (choice == 2){
-    message = "Drink 2";
-  } else if (choice == 3){
-    message = "Drink 3";
-  } else if (choice == 4){
-    message = "Drink 4";
-  } else{
-    message = "Invalid Entry";
-  }
+  message = drink_names[choice];
   lcdPrint(message);
 }
 
