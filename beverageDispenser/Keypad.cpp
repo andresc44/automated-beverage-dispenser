@@ -18,8 +18,15 @@ Keypad customKeypad = Keypad( makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS
   
 int keySelected(){
   char customKey = customKeypad.getKey();
-  if (customKey >= '1' && customKey <= '4'){
-    return customKey - '0'; //return integer representation of the character
+  if (customKey == 'A'){
+    return 10;
+  } else if (customKey == 'B'){
+    return 11;
+  } else if (customKey == 'C'){
+    return 12;
+  } else if (customKey == 'D'){
+    return 13;
   } else{
-    return 0;
+    return customKey - '0';
+  }
 }
