@@ -25,7 +25,7 @@ int keySelected(){
   } else if (customKey == 'C'){
     return 12;
   } else if (customKey == 'D'){
-    return 13;
+    return -10;
   } else{
     return customKey - '0';
   }
