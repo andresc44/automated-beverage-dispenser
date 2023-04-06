@@ -9,11 +9,12 @@
 #include "Lights.h"
 #include "Pumps.h"
 
-const int FILLUP_TIME = 4000; //milliseconds of how long it takes to fillup a drink to a desired level
-const String drink1 = "DRINK 1";
-const String drink2 = "DRINK 2";
-const String drink3 = "DRINK 3";
-const String drink4 = "DRINK 4";
+const int FILLUP_TIME = 12000; //milliseconds of how long it takes to fillup a drink to a desired level
+const float DURATION_CONVERSION = FILLUP_TIME/18; //Seconds per oz
+const String drink1 = "Coca Cola";
+const String drink2 = "Lime Juice";
+const String drink3 = "Rum";
+const String drink4 = "Vodka";
 
 void setup() {
   Serial.begin(9600);
@@ -24,10 +25,10 @@ void setup() {
 }
 
 void loop() {
-  ledFinished(false);
+//  ledFinished(false);
   lcdPrint("Hello, Please make a selection"); //might need delay after print statements 
-  uint8_t choice_made = 255;    //does int cover everything? Input protection in keySelected stage
-  while (choice_made == 255){ //need to put a statement that woud assing choice made only if keyselected result isn't zero
+  int choice_made = 255;    //does int cover everything? Input protection in keySelected stage
+  while ((choice_made == 255)||(choice_made <= 0)){ //need to put a statement that woud assing choice made only if keyselected result isn't zero
     choice_made = keySelected();//Add protection from timeout, return the key pressed
   }
   delay(400);
@@ -42,7 +43,7 @@ void loop() {
     int on_time = pumps_time[pump];
     if (on_time) {
       lcd.clear();
-      ledPumpOn(pump);
+//      ledPumpOn(pump);
       lcdPouring(pump);
       pumpOn(pump, on_time);
       delay(300); // To allow electric load to drop mildly rather than spike
@@ -50,8 +51,8 @@ void loop() {
   }
   
   lcd.clear();
-  lcdPrint("Your drink is now ready, please enjoy!");
-  ledFinished(true);
+  lcdPrint("Your drink is now ready");
+//  ledFinished(true);
   delay(5000);
   lcd.clear();
 }

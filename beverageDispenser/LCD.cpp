@@ -62,7 +62,7 @@ void lcdPrint(String message){
   }
 }
 
-void lcdChoice(uint8_t choice){
+void lcdChoice(int choice){
   String message;
   message = drink_names[choice];
   lcdPrint(message);

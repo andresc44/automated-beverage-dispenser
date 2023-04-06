@@ -3,7 +3,7 @@
 
 void lcdSetup();                      // Setup LCD display
 void lcdPrint(String message);        // Print a given message on LCD, check length of message as well
-void lcdChoice(uint8_t choice);       // Print from default messages about the choice of drink
+void lcdChoice(int choice);       // Print from default messages about the choice of drink
 void lcdPouring(uint8_t pump_number); // Print "Currently pouring XX"
 
 #endif
