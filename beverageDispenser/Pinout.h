@@ -2,22 +2,21 @@
 #define PINOUT_H
 
 //Pump1
-int pump1_in1 = ;
-int pump1_in2 = ;
+int pump1_in1 = 1;
+int pump1_in2 = 1;
 
 //Pump2
-int pump2_in3 = ;
-int pump2_in4 = ;  
+int pump2_in3 = 1;
+int pump2_in4 = 1;  
 
 //Pump3
-int pump3_in1 = ;
-int pump3_in2 = ;
+int pump3_in1 = 1;
+int pump3_in2 = 1;
 
 //Pump4
-int pump4_in3 = ;
-int pump4_in4 = ;
+int pump4_in3 = 1;
+int pump4_in4 = 1;
 
-const RED_LED = 1; //Pins on Arduino are placed here
 // Liam please add the required pins and labels
 
 

@@ -50,7 +50,7 @@ void pumpDurations(int choice, int *durations[]){ // Alter pointer of durations 
 
 
 
-void pumpOn(uint8_t pump_number, int duration); {    //make sure array indexing is correct, do i need globalization forthe pump pins arrray
+void pumpOn(uint8_t pump_number, int duration) {    //make sure array indexing is correct, do i need globalization forthe pump pins arrray
 
   int pump_pin = pump_pins[pump_number -1];
   digitalWrite(pump_pin, HIGH); //makes the first 'in' pin of the pump equal to high to allow current flow 

@@ -45,6 +45,11 @@ void loop() {
       lcd.clear();
 //      ledPumpOn(pump);
       lcdPouring(pump);
+      Serial.print("Pump and time: ");
+      Serial.print(pump);
+      Serial.print(" ");
+      Serial.println(on_time);
+      
       pumpOn(pump, on_time);
       delay(300); // To allow electric load to drop mildly rather than spike
     }
