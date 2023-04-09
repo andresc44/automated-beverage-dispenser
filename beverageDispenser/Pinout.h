@@ -17,7 +17,8 @@ int pump3_in2 = 1;
 int pump4_in3 = 1;
 int pump4_in4 = 1;
 
-// Liam please add the required pins and labels
+//Emergency stop switch pin
+#define EMERGENCY_STOP = 2 //can be 2,3,18,19,20, or 21
 
 
 #endif

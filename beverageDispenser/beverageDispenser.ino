@@ -15,9 +15,12 @@ const String drink1 = "Coca Cola";
 const String drink2 = "Lime Juice";
 const String drink3 = "Rum";
 const String drink4 = "Vodka";
+volatile byte stopFlag = LOW;
 
 void setup() {
   Serial.begin(9600);
+  pinMode(2, INPUT);
+  attachInterrupt(digitalPinToInterrupt(2), switchISR, CHANGE); 
   lcdSetup();
   pumpsSetup();
   lightsSetup();
@@ -62,4 +65,8 @@ void loop() {
   lcd.clear();
 }
 
-// Emergency stop push button interrupt, to be discussed
+void switchISR(){
+
+  stopFlag = HIGH;
+  
+}
