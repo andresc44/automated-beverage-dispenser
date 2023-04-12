@@ -69,20 +69,20 @@ float drink_amounts[13][4] = {
 
 
 
-int pump1_in1 = 1;
+int pump1_in1 = 22;
 int pump1_in2 = 1;
 
 //Pump2
-int pump2_in3 = 1;
-int pump2_in4 = 1;  
+int pump2_in3 = 24;
+int pump2_in4 = 25;  
 
 //Pump3
-int pump3_in1 = 1;
-int pump3_in2 = 1;
+int pump3_in1 = 28;
+int pump3_in2 = 29;
 
 //Pump4
-int pump4_in3 = 1;
-int pump4_in4 = 1;
+int pump4_in3 = 30;
+int pump4_in4 = 31;
 
 int pump_pins[4] = {pump1_in1, pump2_in3, pump3_in1, pump4_in3};
 
@@ -274,7 +274,7 @@ void setup() {
 void loop() {
 //  ledFinished(false);
   if (stopFlag == HIGH) {
-    lcdPrint("Please toggle switch to restart");
+    lcdPrint("Toggle switch to restart");
     delay(500);
     return;
   }
